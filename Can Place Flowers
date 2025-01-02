@@ -1,0 +1,30 @@
+class Solution {
+    public boolean canPlaceFlowers(int[] flowerbed, int n) {
+        if(n==0){
+            return true;
+        }
+        int count=0;
+        for (int i=0;i<flowerbed.length;i++)
+        {
+          if(flowerbed[i]==0 && flowerbed[i-1]==0 && flowerbed[i+1]==0){
+            count++;
+            if(count==n){
+                return true;
+            }
+            i++;
+          }
+        }
+        return false;
+    }
+}
+
+
+Example 1:
+
+Input: flowerbed = [1,0,0,0,1], n = 1
+Output: true
+Example 2:
+
+Input: flowerbed = [1,0,0,0,1], n = 2
+Output: false
+ // If exception occurs when i==0 make the if condition i==0 || flowerbed.length==0

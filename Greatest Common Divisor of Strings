@@ -1,0 +1,33 @@
+class Solution {
+   
+public String gcdOfStrings(String str1, String str2) {
+        String result="";
+        if(!(str1+str2).equals(str2+str1)) 
+       { 
+        result="";
+        return result;
+    }else{
+        int gval=gcd(str1.length(),str2.length());
+        result = str2.substring(0, gval);
+        return result;
+    }
+    }
+           public static int gcd(int a,int b){
+            if(a==0) return b;
+            else return gcd (b%a,a);
+           }
+}
+
+
+Example 1:
+
+Input: str1 = "ABCABC", str2 = "ABC"
+Output: "ABC"
+Example 2:
+
+Input: str1 = "ABABAB", str2 = "ABAB"
+Output: "AB"
+Example 3:
+
+Input: str1 = "LEET", str2 = "CODE"
+Output: ""

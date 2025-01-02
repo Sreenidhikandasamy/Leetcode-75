@@ -1,0 +1,38 @@
+class Solution {
+    public String reverseVowels(String s) {
+        char[] c=s.toCharArray();
+        String vow="aeiouAEIOU";
+        int start=0;
+        int end=s.length()-1;
+        while(start<end){
+            while(start<end){
+            char ch=c[start];
+            if(vow.indexOf(ch)!=-1)
+                break;
+            start++;
+        }
+        while(start<end){
+            char ch=c[end];
+            if(vow.indexOf(ch)!=-1)
+            break;
+            end--;
+        }
+        if(start<end){
+            char temp=c[start];
+            c[start]=c[end];
+            c[end]=temp;
+            start++;
+            end--;
+
+        }
+        }
+        return new String(c);
+    }
+}
+
+Input
+s =
+"leetcode"
+Output
+"leotcede"
+
